@@ -1,0 +1,501 @@
+archetype (adl_version=1.4; uid=5e473691-b970-4459-bdb4-ccf67295fe04)
+	openEHR-EHR-ADMIN_ENTRY.kolonnerusomsorg_hn.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["date"] = <"2025-03-03">
+		["name"] = <"Jonas Lyshaug">
+		["organisation"] = <"HN IKT">
+		["email"] = <"jonas.nils.erik.lyshaug@hnikt.no">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"Oversikt i kolonne av svar i spesifikt skjema.">
+			keywords = <"Rus Døgnenhet, Avrusningsenhet UNN-Narvik", ...>
+			use = <" Kun bruk for Rus Døgnenhet, Avrusningsenhet UNN-Narvik">
+			misuse = <"Noen annen avdeling en Rus Døgnenhet, Avrusningsenhet UNN-Narvik">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"ae11bd01db2a636891197dad0df082ae">
+		["build_uid"] = <"d92a91ea-33b7-331e-a34d-2d3196e75e9b">
+	>
+
+definition
+	ADMIN_ENTRY[at0000] matches {    -- kolonnerusomsorg_hn
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0049] occurrences matches {0..1} matches {    -- Dato/Tid for registrering
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Gjennomgang av bagasje og pasient
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0003,    -- Utført
+									at0004]    -- Ikke relevant
+								}
+							}
+						}
+					}
+					ELEMENT[at0008] occurrences matches {0..1} matches {    -- Barn som pårørende (BSP)
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0009,    -- Utført
+									at0010]    -- Ikke relevant
+								}
+							}
+						}
+					}
+					ELEMENT[at0011] occurrences matches {0..1} matches {    -- Medisinsk informasjon
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0012,    -- Utført
+									at0013]    -- Ikke relevant
+								}
+							}
+						}
+					}
+					ELEMENT[at0014] occurrences matches {0..1} matches {    -- Alkohol-E
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0015,    -- Utført
+									at0016]    -- Ikke relevant
+								}
+							}
+						}
+					}
+					ELEMENT[at0017] occurrences matches {0..1} matches {    -- Dudit-E
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0018,    -- Utført
+									at0019]    -- Ikke relevant
+								}
+							}
+						}
+					}
+					ELEMENT[at0052] occurrences matches {0..1} matches {    -- PLO
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0057,    -- Utført
+									at0058,    -- Ikke relevant
+									at0059]    -- Påbegynt
+								}
+							}
+						}
+					}
+					ELEMENT[at0020] occurrences matches {0..1} matches {    -- Forebygging av overdose (FAO)
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0021,    -- Utført
+									at0022,    -- Ikke relevant
+									at0023]    -- Påbegynt
+								}
+							}
+						}
+					}
+					ELEMENT[at0024] occurrences matches {0..1} matches {    -- Sluttnotat, overføringsnotat
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0025,    -- Utført
+									at0026,    -- Ikke relevant
+									at0030]    -- Påbegynt
+								}
+							}
+						}
+					}
+					ELEMENT[at0027] occurrences matches {0..1} matches {    -- Kartlegging av risiko (KAR)
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0028,    -- Utført
+									at0029,    -- Ikke relevant
+									at0031]    -- Påbegynt
+								}
+							}
+						}
+					}
+					ELEMENT[at0051] occurrences matches {0..1} matches {    -- Medisinsk info Døgn
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0055,    -- Utført
+									at0056]    -- Ikke relevant
+								}
+							}
+						}
+					}
+					ELEMENT[at0032] occurrences matches {0..1} matches {    -- Aktivitet- miljøkartlegging
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0033,    -- Utført
+									at0034,    -- Ikke relevant
+									at0044]    -- Påbegynt
+								}
+							}
+						}
+					}
+					ELEMENT[at0035] occurrences matches {0..1} matches {    -- Urinprøve (innkomst)
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0036,    -- Utført
+									at0037]    -- Ikke relevant
+								}
+							}
+						}
+					}
+					ELEMENT[at0038] occurrences matches {0..1} matches {    -- Blodprøver (innkomst)
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0039,    -- Utført
+									at0040]    -- Ikke relevant
+								}
+							}
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {    -- Samtykkeskjema
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0006,    -- Utført
+									at0007]    -- Ikke relevant
+								}
+							}
+						}
+					}
+					ELEMENT[at0041] occurrences matches {0..1} matches {    -- EKG (innkomst)
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0042,    -- Utført
+									at0043]    -- Ikke relevant
+								}
+							}
+						}
+					}
+					ELEMENT[at0050] occurrences matches {0..1} matches {    -- Medisinsk info Avrusning
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0053,    -- Utført
+									at0054]    -- Ikke relevant
+								}
+							}
+						}
+					}
+					ELEMENT[at0045] occurrences matches {0..1} matches {    -- Kriseplan
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0046,    -- Utført
+									at0047,    -- Ikke relevant
+									at0048]    -- Påbegynt
+								}
+							}
+						}
+					}
+					ELEMENT[at0060] occurrences matches {0..1} matches {    -- Avdeling
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"kolonnerusomsorg_hn">
+					description = <"KolonneRusomsorg skal kun brukes for Rus Døgnenhet og Avrusningsenhet ved UNN-Narvik">
+				>
+				["at0001"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Gjennomgang av bagasje og pasient">
+					description = <"">
+				>
+				["at0003"] = <
+					text = <"Utført">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"Ikke relevant">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"Samtykkeskjema">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"Utført">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"Ikke relevant">
+					description = <"">
+				>
+				["at0008"] = <
+					text = <"Barn som pårørende (BSP)">
+					description = <"">
+				>
+				["at0009"] = <
+					text = <"Utført">
+					description = <"">
+				>
+				["at0010"] = <
+					text = <"Ikke relevant">
+					description = <"">
+				>
+				["at0011"] = <
+					text = <"Medisinsk informasjon">
+					description = <"">
+					comment = <"Skal ikke brukes">
+				>
+				["at0012"] = <
+					text = <"Utført">
+					description = <"">
+				>
+				["at0013"] = <
+					text = <"Ikke relevant">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Alkohol-E">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Utført">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Ikke relevant">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Dudit-E">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Utført">
+					description = <"">
+				>
+				["at0019"] = <
+					text = <"Ikke relevant">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Forebygging av overdose (FAO)">
+					description = <"">
+				>
+				["at0021"] = <
+					text = <"Utført">
+					description = <"">
+				>
+				["at0022"] = <
+					text = <"Ikke relevant">
+					description = <"">
+				>
+				["at0023"] = <
+					text = <"Påbegynt">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Sluttnotat, overføringsnotat">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Utført">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Ikke relevant">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Kartlegging av risiko (KAR)">
+					description = <"Gjelder Døgnenheten">
+				>
+				["at0028"] = <
+					text = <"Utført">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Ikke relevant">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Påbegynt">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Påbegynt">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Aktivitet- miljøkartlegging">
+					description = <"Gjelder Døgnenheten">
+				>
+				["at0033"] = <
+					text = <"Utført">
+					description = <"">
+				>
+				["at0034"] = <
+					text = <"Ikke relevant">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"Urinprøve (innkomst)">
+					description = <"Gjelder Avrusningsenhet">
+				>
+				["at0036"] = <
+					text = <"Utført">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Ikke relevant">
+					description = <"">
+				>
+				["at0038"] = <
+					text = <"Blodprøver (innkomst)">
+					description = <"Gjelder Avrusningsenhet">
+				>
+				["at0039"] = <
+					text = <"Utført">
+					description = <"">
+				>
+				["at0040"] = <
+					text = <"Ikke relevant">
+					description = <"">
+				>
+				["at0041"] = <
+					text = <"EKG (innkomst)">
+					description = <"Gjelder Avrusningsenhet">
+				>
+				["at0042"] = <
+					text = <"Utført">
+					description = <"">
+				>
+				["at0043"] = <
+					text = <"Ikke relevant">
+					description = <"">
+				>
+				["at0044"] = <
+					text = <"Påbegynt">
+					description = <"">
+				>
+				["at0045"] = <
+					text = <"Kriseplan">
+					description = <"Gjelder Avrusningsenhet">
+				>
+				["at0046"] = <
+					text = <"Utført">
+					description = <"">
+				>
+				["at0047"] = <
+					text = <"Ikke relevant">
+					description = <"">
+				>
+				["at0048"] = <
+					text = <"Påbegynt">
+					description = <"">
+				>
+				["at0049"] = <
+					text = <"Dato/Tid for registrering">
+					description = <"">
+				>
+				["at0050"] = <
+					text = <"Medisinsk info Avrusning">
+					description = <"">
+				>
+				["at0051"] = <
+					text = <"Medisinsk info Døgn">
+					description = <"">
+				>
+				["at0052"] = <
+					text = <"PLO">
+					description = <"">
+				>
+				["at0053"] = <
+					text = <"Utført">
+					description = <"">
+				>
+				["at0054"] = <
+					text = <"Ikke relevant">
+					description = <"">
+				>
+				["at0055"] = <
+					text = <"Utført">
+					description = <"">
+				>
+				["at0056"] = <
+					text = <"Ikke relevant">
+					description = <"">
+				>
+				["at0057"] = <
+					text = <"Utført">
+					description = <"">
+				>
+				["at0058"] = <
+					text = <"Ikke relevant">
+					description = <"">
+				>
+				["at0059"] = <
+					text = <"Påbegynt">
+					description = <"">
+				>
+				["at0060"] = <
+					text = <"Avdeling">
+					description = <"">
+				>
+			>
+		>
+	>
