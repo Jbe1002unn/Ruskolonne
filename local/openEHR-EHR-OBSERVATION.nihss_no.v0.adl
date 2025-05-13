@@ -1,0 +1,658 @@
+archetype (adl_version=1.4; uid=54207798-14c7-43af-80e5-4a418e435d26)
+	openEHR-EHR-OBSERVATION.nihss_no.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::nb]>
+
+description
+	original_author = <
+		["date"] = <"2025-02-09">
+		["name"] = <"June Marie Nepstad Knappskog">
+		["organisation"] = <"Helse Nord IKT">
+		["email"] = <"June.Marie.Nepstad.Knappskog@hnikt.no">
+	>
+	lifecycle_state = <"in_development">
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"For å registrere resultat av National Institutes of Health Stroke Score som en kvantitativ måling av slag-relaterte nevrologiske avvik. Denne arketypen er laget spesifikt for den norske modifikasjonen av NIHSS.">
+			keywords = <"skala","nevrologisk","hjerneslag","vurdering","undersøkelse","NIHSS","pakkeforløp">
+			use = <"Brukes for å registrere resultat av NIHSS skåring som en kvantitativ måling av slag-relaterte nevrologiske avvik. Total skåren er en aritmetisk sum av alle 15 svarene, med alle Ikke testbar verdier ekskludert.
+
+Ordinalverdien \"99\" er tatt med for å kunne representere den ikke-numeriske verdien \"Ikke testbar\". Per nå tillater ikke verken modelleringsverktøyer eller ferdige openEHR journalsystemer å bruke en kombinasjon av numeriske og ikke-numeriske verdier innen ett enkelt verdisett.">
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["references"] = <"NIH Stroke Scale [Internet]. Bethesda, MD: National Institute of Health; [cited 2023 Mar 04].  Available from: https://www.stroke.nih.gov/resources/scale.htm.
+
+Validated translation of the NIHSS with cultural adaptation [Internet]. Sykepleien Forskning; [cited 2023 Mar 04]. Available from: https://sykepleien.no/forskning/2020/11/validert-oversettelse-av-nihss-med-kulturell-tilpasning">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"8d77fe3efa53c702ae1f2fe04e1827a3">
+		["build_uid"] = <"8ae86d13-4a4b-3481-95d4-36b38f9e3093">
+	>
+
+definition
+	OBSERVATION[at0000] matches {    -- NIHSS (NO)
+		data matches {
+			HISTORY[at0001] matches {    -- History
+				events cardinality matches {1..*; unordered} matches {
+					POINT_EVENT[at0002] occurrences matches {0..1} matches {    -- Grunnlinje
+						data matches {
+							ITEM_TREE[at0003] matches {    -- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {    -- Bevissthetsnivå
+										value matches {
+											0|[local::at0148],
+											1|[local::at0149],
+											2|[local::at0150],
+											3|[local::at0151]
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {    -- Orientering
+										value matches {
+											0|[local::at0152],
+											1|[local::at0153],
+											2|[local::at0154]
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {    -- Respons på kommando
+										value matches {
+											0|[local::at0155],
+											1|[local::at0156],
+											2|[local::at0157]
+										}
+									}
+									ELEMENT[at0007] occurrences matches {0..1} matches {    -- Blikkbevegelse
+										value matches {
+											0|[local::at0158],
+											1|[local::at0159],
+											2|[local::at0160]
+										}
+									}
+									ELEMENT[at0008] occurrences matches {0..1} matches {    -- Synsfelt
+										value matches {
+											0|[local::at0161],
+											1|[local::at0162],
+											2|[local::at0163],
+											3|[local::at0164]
+										}
+									}
+									ELEMENT[at0009] occurrences matches {0..1} matches {    -- Ansikt
+										value matches {
+											0|[local::at0165],
+											1|[local::at0166],
+											2|[local::at0167],
+											3|[local::at0168]
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {    -- Kraft i venstre arm
+										value matches {
+											0|[local::at0169],
+											1|[local::at0170],
+											2|[local::at0171],
+											3|[local::at0172],
+											4|[local::at0173],
+											0|[local::at0174]
+										}
+									}
+									ELEMENT[at0011] occurrences matches {0..1} matches {    -- Beskriv Ikke testbar - venstre arm
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0012] occurrences matches {0..1} matches {    -- Kraft i armen - høyre arm
+										value matches {
+											0|[local::at0175],
+											1|[local::at0176],
+											2|[local::at0177],
+											3|[local::at0178],
+											4|[local::at0179],
+											99|[local::at0180]
+										}
+									}
+									ELEMENT[at0013] occurrences matches {0..1} matches {    -- Beskriv Ikke testbar - høyre arm
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0014] occurrences matches {0..1} matches {    -- Kraft i benet - venstre ben
+										value matches {
+											0|[local::at0181],
+											1|[local::at0182],
+											2|[local::at0183],
+											3|[local::at0184],
+											4|[local::at0185],
+											99|[local::at0186]
+										}
+									}
+									ELEMENT[at0015] occurrences matches {0..1} matches {    -- Beskriv Ikke testbar - venstre ben
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0016] occurrences matches {0..1} matches {    -- Kraft i benet - høyre ben
+										value matches {
+											0|[local::at0187],
+											1|[local::at0188],
+											2|[local::at0189],
+											3|[local::at0190],
+											4|[local::at0191],
+											99|[local::at0192]
+										}
+									}
+									ELEMENT[at0017] occurrences matches {0..1} matches {    -- Beskriv Ikke testbar - høyre ben
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0018] occurrences matches {0..1} matches {    -- Ataksi
+										value matches {
+											0|[local::at0193],
+											1|[local::at0194],
+											2|[local::at0195],
+											99|[local::at0196]
+										}
+									}
+									ELEMENT[at0019] occurrences matches {0..1} matches {    -- Beskriv Ikke testbar - ataksi
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0020] occurrences matches {0..1} matches {    -- Sensibilitet
+										value matches {
+											0|[local::at0197],
+											1|[local::at0198],
+											2|[local::at0199]
+										}
+									}
+									ELEMENT[at0021] occurrences matches {0..1} matches {    -- Språk
+										value matches {
+											0|[local::at0200],
+											1|[local::at0201],
+											2|[local::at0202],
+											3|[local::at0203]
+										}
+									}
+									ELEMENT[at0022] occurrences matches {0..1} matches {    -- Dysartri
+										value matches {
+											0|[local::at0204],
+											1|[local::at0205],
+											2|[local::at0206],
+											99|[local::at0207]
+										}
+									}
+									ELEMENT[at0023] occurrences matches {0..1} matches {    -- Beskriv Ikke testbar - dysartri
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0024] occurrences matches {0..1} matches {    -- Neglekt
+										value matches {
+											0|[local::at0208],
+											1|[local::at0209],
+											2|[local::at0210]
+										}
+									}
+									ELEMENT[at0025] occurrences matches {0..1} matches {    -- Total NIHSS-Score
+										value matches {
+											DV_COUNT matches {
+												magnitude matches {|0..42|}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					POINT_EVENT[at0026] occurrences matches {0..1} matches {    -- 2 timer etter behandling
+						data matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+						}
+					}
+					POINT_EVENT[at0050] occurrences matches {0..1} matches {    -- 24 timer etter symptomdebut
+						data matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+						}
+					}
+					POINT_EVENT[at0074] occurrences matches {0..1} matches {    -- 7–10 dager
+						data matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+						}
+					}
+					POINT_EVENT[at0098] occurrences matches {0..1} matches {    -- 3 måneder
+						data matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+						}
+					}
+					EVENT[at0122] occurrences matches {0..*} matches {    -- Uspesifisert hendelse
+						data matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0146] matches {    -- Item tree
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0147] occurrences matches {0..*} matches {    -- Tilleggsinformasjon
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"NIHSS (NO)">
+					description = <"15-punkts nevrologisk hjerneslagskalaundersøkelse som gir en kvantitativ måling av slag-relaterte nevrologiske avvik.">
+					comment = <"National Institutes of Health Stroke Score">
+				>
+				["at0001"] = <
+					text = <"History">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Grunnlinje">
+					description = <"Vurdering ved mottak.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Bevissthetsnivå">
+					description = <"Observert bevissthetsnivå av individet.">
+				>
+				["at0005"] = <
+					text = <"Orientering">
+					description = <"Individet spørres om måned og alder.">
+				>
+				["at0006"] = <
+					text = <"Respons på kommando">
+					description = <"Individet bes åpne og lukke øyne, og knyte hånd.">
+				>
+				["at0007"] = <
+					text = <"Blikkbevegelse">
+					description = <"Horisontal bevegelse til begge sider.">
+				>
+				["at0008"] = <
+					text = <"Synsfelt">
+					description = <"Bevege fingre/fingertelling i laterale synsfelt.">
+				>
+				["at0009"] = <
+					text = <"Ansikt">
+					description = <"Individet spørres om å vise tenner, knipe igjen øynene og løfte øyenbryn.">
+				>
+				["at0010"] = <
+					text = <"Kraft i venstre arm">
+					description = <"Holde venstre arm utstrakt 45 grader i 10 sekunder.">
+					comment = <"Bare i tilfeller som amputasjon eller skulderleddfusjon, bør helsepersonell registrere verdien 'Ikke testbar' og registrere beskrivelsen i dataelementet 'Beskriv Ikke testbar - venstre arm'.
+Implementeringsnotat: Selv om 'Ikke testbar' verdien er inkludert i ordinalen for å tillate inkludering i brukergrensesnittets nedtrekksmeny, tilegner NIHSS ikke en numerisk skår for 'Ikke testbar'-valget til total NIHSS-Score.">
+				>
+				["at0011"] = <
+					text = <"Beskriv Ikke testbar - venstre arm">
+					description = <"Fritekstlig beskrivelse om hvorfor venstre arm ikke er testbar.">
+				>
+				["at0012"] = <
+					text = <"Kraft i armen - høyre arm">
+					description = <"Holde høyre arm utstrakt 45 grader i 10 sekunder.">
+					comment = <"Bare i tilfeller som amputasjon eller skulderleddfusjon, bør helsepersonell registrere verdien 'Ikke testbar' og registrere beskrivelsen i dataelementet 'Beskriv Ikke testbar - høyre arm'.
+Implementeringsnotat: selv om 'Ikke testbar' verdien er inkludert i ordinalen for å tillate inkludering i brukergrensesnittets nedtrekksmeny, tilegner NIHSS ikke en numerisk skår for 'Ikke testbar'-valget til total NIHSS-Score.">
+				>
+				["at0013"] = <
+					text = <"Beskriv Ikke testbar - høyre arm">
+					description = <"Fritekstlig beskrivelse om hvorfor høyre arm er Ikke testbar.">
+				>
+				["at0014"] = <
+					text = <"Kraft i benet - venstre ben">
+					description = <"Holde venstre ben utstrakt 30 grader i 5 sekunder.">
+					comment = <"Bare i tilfeller som amputasjon eller hofteleddfusjon, bør helsepersonell registrere verdien 'Ikke testbar' og registrere beskrivelsen i 'Beskriv Ikke testbar - venstre ben' dataelementet.
+Implementeringsnotat: selv om 'Ikke testbar' verdien er inkludert i ordinalen for å tillate inkludering i brukergrensesnittets nedtrekksmeny, tilegner NIHSS ikke en numerisk skår for 'Ikke testbar'-valget til total NIHSS-Score.">
+				>
+				["at0015"] = <
+					text = <"Beskriv Ikke testbar - venstre ben">
+					description = <"Fritekstlig beskrivelse om hvorfor venstre ben er Ikke testbar.">
+				>
+				["at0016"] = <
+					text = <"Kraft i benet - høyre ben">
+					description = <"Holde høyre ben utstrakt 30 grader i 5 sekunder.">
+					comment = <"Bare i tilfeller som amputasjon eller hofteleddfusjon, bør helsepersonell registrere verdien 'Ikke testbar' og registrere beskrivelsen i 'Beskriv Ikke testbar - høyre ben' dataelementet.
+Implementeringsnotat: selv om 'Ikke testbar' verdien er inkludert i ordinalen for å tillate inkludering i brukergrensesnittets nedtrekksmeny, tilegner NIHSS ikke en numerisk skår for 'Ikke testbar'-valget til total NIHSS-Score.">
+				>
+				["at0017"] = <
+					text = <"Beskriv Ikke testbar - høyre ben">
+					description = <"Fritekstlig beskrivelse om hvorfor høyre ben er Ikke testbar.">
+				>
+				["at0018"] = <
+					text = <"Ataksi">
+					description = <"Finger-nese-finger test/kne-hæl test.">
+					comment = <"Bare i tilfeller så som amputasjon eller leddfusjon, bør helsepersonell registrere verdien 'Ikke testbar' og registrere beskrivelsen i 'Beskriv Ikke testbar ataksi' dataelementet.
+Implementeringsnotat: selv om 'Ikke testbar' verdien er inkludert i ordinalen for å tillate inkludering i brukergrensesnittets nedtrekksmeny, tilegner NIHSS ikke en numerisk skår for 'Ikke testbar'-valget til total NIHSS-Score.">
+				>
+				["at0019"] = <
+					text = <"Beskriv Ikke testbar - ataksi">
+					description = <"Fritekstlig beskrivelse om hvorfor ataksi er Ikke testbar.">
+				>
+				["at0020"] = <
+					text = <"Sensibilitet">
+					description = <"Sensibilitet for stikk.">
+				>
+				["at0021"] = <
+					text = <"Språk">
+					description = <"Tale, taleforståelse, leseforståelse, benevning.">
+				>
+				["at0022"] = <
+					text = <"Dysartri">
+					description = <"Spontan tale.">
+					comment = <"Kun hvis individet er intubert eller har en annen fysisk sperre for å produsere tale, bør helsepersonell registrere verdien 'Ikke testbar' og registrere beskrivelsen i 'Beskriv Ikke testbar dysartri' dataelementet.
+Implementeringsnotat: selv om 'Ikke testbar' verdien er inkludert i ordinalen for å tillate inkludering i brukergrensesnittets nedtrekksmeny, tilegner NIHSS ikke en numerisk skår for 'Ikke testbar'-valget til total NIHSS-Score.">
+				>
+				["at0023"] = <
+					text = <"Beskriv Ikke testbar - dysartri">
+					description = <"Fritekstlig beskrivelse om hvorfor dysartri er Ikke testbar.">
+				>
+				["at0024"] = <
+					text = <"Neglekt">
+					description = <"Bilateral simultan stimulering av syn og hudfølelse.">
+				>
+				["at0025"] = <
+					text = <"Total NIHSS-Score">
+					description = <"Summen av ordinalverdier registrert for hver av de 15 komponentsvarene.">
+				>
+				["at0026"] = <
+					text = <"2 timer etter behandling">
+					description = <"Vurdering utført 2 timer etter behandling.">
+				>
+				["at0050"] = <
+					text = <"24 timer etter symptomdebut">
+					description = <"Vurdering utført 24 timer etter symptomdebut (med et slingringsmonn på +-20 minutter).">
+				>
+				["at0074"] = <
+					text = <"7–10 dager">
+					description = <"Vurdering utført 7-10 dager etter hjerneslag.">
+				>
+				["at0098"] = <
+					text = <"3 måneder">
+					description = <"Vurdering utført 3 måneder etter hjerneslag.">
+				>
+				["at0122"] = <
+					text = <"Uspesifisert hendelse">
+					description = <"Standard uspesifisert tidspunkt- eller intervallhendelse som kan defineres mer eksplisitt i et templat eller i en applikasjon.">
+				>
+				["at0146"] = <
+					text = <"Item tree">
+					description = <"@ internal @">
+				>
+				["at0147"] = <
+					text = <"Tilleggsinformasjon">
+					description = <"Ytterligere informasjon som trengs for å kunne registrere lokalt definert innhold eller for å tilpasse til andre referansemodeller eller formalismer.">
+					comment = <"For eksempel: lokale informasjonsbehov eller ytterligere metadata for å kunne tilpasse til tilsvarende konsepter i FHIR.">
+				>
+				["at0148"] = <
+					text = <"Våken og adekvat">
+					description = <"">
+				>
+				["at0149"] = <
+					text = <"Døsig, reagerer adekvat ved lett stimulering">
+					description = <"">
+				>
+				["at0150"] = <
+					text = <"Døsig, reagerer først ved kraftigere/gjentatt stimulering">
+					description = <"">
+				>
+				["at0151"] = <
+					text = <"Reagerer ikke, eller bare med ikke-målrettet bevegelse">
+					description = <"">
+				>
+				["at0152"] = <
+					text = <"Riktig svar på begge spørsmål">
+					description = <"">
+				>
+				["at0153"] = <
+					text = <"Riktig svar på ett spørsmål">
+					description = <"">
+				>
+				["at0154"] = <
+					text = <"Ingen riktige svar">
+					description = <"">
+				>
+				["at0155"] = <
+					text = <"Utfører begge kommandoer korrekt">
+					description = <"">
+				>
+				["at0156"] = <
+					text = <"Utfører en kommando korrekt">
+					description = <"">
+				>
+				["at0157"] = <
+					text = <"Utfører ingen korrekt">
+					description = <"">
+				>
+				["at0158"] = <
+					text = <"Normal øyebevegelse">
+					description = <"">
+				>
+				["at0159"] = <
+					text = <"Delvis blikkparese (eller ved øyemuskelparese)">
+					description = <"">
+				>
+				["at0160"] = <
+					text = <"Fiksert blikkdreining til siden eller total blikkparese">
+					description = <"">
+				>
+				["at0161"] = <
+					text = <"Normalt">
+					description = <"">
+				>
+				["at0162"] = <
+					text = <"Delvis hemianopsi">
+					description = <"">
+				>
+				["at0163"] = <
+					text = <"Total hemianopsi">
+					description = <"">
+				>
+				["at0164"] = <
+					text = <"Bilateral hemianopsi/blind">
+					description = <"">
+				>
+				["at0165"] = <
+					text = <"Normale symmetriske bevegelser">
+					description = <"">
+				>
+				["at0166"] = <
+					text = <"Utvisket nasolabalfure, asymmetri ved smil">
+					description = <"">
+				>
+				["at0167"] = <
+					text = <"Betydelig lammelse i nedre ansiktshalvdel">
+					description = <"">
+				>
+				["at0168"] = <
+					text = <"Total lammelse i halve ansiktet">
+					description = <"">
+				>
+				["at0169"] = <
+					text = <"Ingen drifting">
+					description = <"">
+				>
+				["at0170"] = <
+					text = <"Drifter til lavere posisjon (treffer ikke underlag)">
+					description = <"">
+				>
+				["at0171"] = <
+					text = <"Noe bevegelse mot tyngdekraften, drifter til sengen">
+					description = <"">
+				>
+				["at0172"] = <
+					text = <"Kun små muskelbevegelser, faller til sengen">
+					description = <"">
+				>
+				["at0173"] = <
+					text = <"Ingen bevegelse">
+					description = <"">
+				>
+				["at0174"] = <
+					text = <"Ikke testbar">
+					description = <"">
+				>
+				["at0175"] = <
+					text = <"Ingen drifting">
+					description = <"">
+				>
+				["at0176"] = <
+					text = <"Drifter til lavere posisjon (treffer ikke underlag)">
+					description = <"">
+				>
+				["at0177"] = <
+					text = <"Noe bevegelse mot tyngdekraften, drifter til sengen">
+					description = <"">
+				>
+				["at0178"] = <
+					text = <"Kun små muskelbevegelser, faller til sengen">
+					description = <"">
+				>
+				["at0179"] = <
+					text = <"Ingen bevegelse">
+					description = <"">
+				>
+				["at0180"] = <
+					text = <"Ikke testbar">
+					description = <"">
+				>
+				["at0181"] = <
+					text = <"Ingen drifting">
+					description = <"">
+				>
+				["at0182"] = <
+					text = <"Drifter til lavere posisjon (treffer ikke underlag)">
+					description = <"">
+				>
+				["at0183"] = <
+					text = <"Noe bevegelse mot tyngdekraften, drifter til sengen">
+					description = <"">
+				>
+				["at0184"] = <
+					text = <"Ingen bevegelse mot tyngdekraften, faller til sengen">
+					description = <"">
+				>
+				["at0185"] = <
+					text = <"Ingen bevegelse">
+					description = <"">
+				>
+				["at0186"] = <
+					text = <"Ikke testbar">
+					description = <"">
+				>
+				["at0187"] = <
+					text = <"Ingen drifting">
+					description = <"">
+				>
+				["at0188"] = <
+					text = <"Drifter til lavere posisjon (treffer ikke underlag)">
+					description = <"">
+				>
+				["at0189"] = <
+					text = <"Noe bevegelse mot tyngdekraften, drifter til sengen">
+					description = <"">
+				>
+				["at0190"] = <
+					text = <"Kun små muskelbevegelser, faller til sengen">
+					description = <"">
+				>
+				["at0191"] = <
+					text = <"Ingen bevegelse">
+					description = <"">
+				>
+				["at0192"] = <
+					text = <"Ikke testbar">
+					description = <"">
+				>
+				["at0193"] = <
+					text = <"Ingen ataksi">
+					description = <"">
+				>
+				["at0194"] = <
+					text = <"Tilstede i en ekstremitet">
+					description = <"">
+				>
+				["at0195"] = <
+					text = <"Tilstede i to ekstremiteter">
+					description = <"">
+				>
+				["at0196"] = <
+					text = <"Ikke testbar">
+					description = <"">
+				>
+				["at0197"] = <
+					text = <"Normal">
+					description = <"">
+				>
+				["at0198"] = <
+					text = <"Mild til moderat utfall (kjenne stikk som mindre skarpt)">
+					description = <"">
+				>
+				["at0199"] = <
+					text = <"Alvorlig til total utfall (også ved coma, kvadriplegisk)">
+					description = <"">
+				>
+				["at0200"] = <
+					text = <"Ingen afasi">
+					description = <"">
+				>
+				["at0201"] = <
+					text = <"Mild til moderat afasi, samtale mulig">
+					description = <"">
+				>
+				["at0202"] = <
+					text = <"Alvorlig afasi, samtale svært vanskelig eller umulig">
+					description = <"">
+				>
+				["at0203"] = <
+					text = <"Ikke språk (også ved coma)">
+					description = <"">
+				>
+				["at0204"] = <
+					text = <"Ingen dysartri">
+					description = <"">
+				>
+				["at0205"] = <
+					text = <"Mild - moderat dysartri (lett snøvling)">
+					description = <"">
+				>
+				["at0206"] = <
+					text = <"Nær uforståelig tale eller stum/global afasi (også coma)">
+					description = <"">
+				>
+				["at0207"] = <
+					text = <"Ikke testbar">
+					description = <"">
+				>
+				["at0208"] = <
+					text = <"Ingen neglekt (også ved hemianopsi med normal sensibilitet)">
+					description = <"">
+				>
+				["at0209"] = <
+					text = <"Neglekt i en sansemodalitet">
+					description = <"">
+				>
+				["at0210"] = <
+					text = <"Neglekt i begge sansemodaliteter">
+					description = <"">
+				>
+			>
+		>
+	>
