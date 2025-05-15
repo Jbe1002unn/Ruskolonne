@@ -30,7 +30,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"ae11bd01db2a636891197dad0df082ae">
+		["MD5-CAM-1.0.1"] = <"b618211ba8fa603510d4df8074e9bc31">
 		["build_uid"] = <"d92a91ea-33b7-331e-a34d-2d3196e75e9b">
 	>
 
@@ -123,7 +123,7 @@ definition
 							}
 						}
 					}
-					ELEMENT[at0024] occurrences matches {0..1} matches {    -- Sluttnotat, overføringsnotat
+					ELEMENT[at0024] occurrences matches {0..1} matches {    -- Sluttnotat, overføringsnotat Avrusning
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
@@ -131,6 +131,18 @@ definition
 									at0025,    -- Utført
 									at0026,    -- Ikke relevant
 									at0030]    -- Påbegynt
+								}
+							}
+						}
+					}
+					ELEMENT[at0061] occurrences matches {0..1} matches {    -- Slutnotat Døgn
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0062,    -- Utført
+									at0063,    -- Ikke relevant
+									at0064]    -- Påbegynt
 								}
 							}
 						}
@@ -349,7 +361,7 @@ ontology
 					description = <"">
 				>
 				["at0024"] = <
-					text = <"Sluttnotat, overføringsnotat">
+					text = <"Sluttnotat, overføringsnotat Avrusning">
 					description = <"">
 				>
 				["at0025"] = <
@@ -494,6 +506,22 @@ ontology
 				>
 				["at0060"] = <
 					text = <"Avdeling">
+					description = <"">
+				>
+				["at0061"] = <
+					text = <"Slutnotat Døgn">
+					description = <"">
+				>
+				["at0062"] = <
+					text = <"Utført">
+					description = <"">
+				>
+				["at0063"] = <
+					text = <"Ikke relevant">
+					description = <"">
+				>
+				["at0064"] = <
+					text = <"Påbegynt">
 					description = <"">
 				>
 			>
