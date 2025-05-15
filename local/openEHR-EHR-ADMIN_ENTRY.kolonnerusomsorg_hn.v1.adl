@@ -30,7 +30,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"36aafee879f63f3aa3ea8e7ec9e9f632">
+		["MD5-CAM-1.0.1"] = <"b85f04436767eae51cfd4c85f28be0a8">
 		["build_uid"] = <"d92a91ea-33b7-331e-a34d-2d3196e75e9b">
 	>
 
@@ -140,7 +140,7 @@ definition
 							DV_CODED_TEXT matches {
 								defining_code matches {
 									[local::
-									at0066,    -- Påbegynt
+									at0066,    -- Utført
 									at0067,    -- Ikke relevant
 									at0068]    -- Påbegynt
 								}
@@ -541,7 +541,7 @@ ontology
 					description = <"">
 				>
 				["at0066"] = <
-					text = <"Påbegynt">
+					text = <"Utført">
 					description = <"">
 				>
 				["at0067"] = <
