@@ -30,7 +30,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"7621697f9e28e2dcde0cb94f927c5c5b">
+		["MD5-CAM-1.0.1"] = <"bedc1794002771cc8eb62b51e5c084e6">
 		["build_uid"] = <"d92a91ea-33b7-331e-a34d-2d3196e75e9b">
 	>
 
@@ -50,7 +50,8 @@ definition
 								defining_code matches {
 									[local::
 									at0003,    -- Utført
-									at0004]    -- Ikke relevant
+									at0004,    -- Ikke relevant
+									at0072]    -- Påbegynt
 								}
 							}
 						}
@@ -83,7 +84,8 @@ definition
 								defining_code matches {
 									[local::
 									at0015,    -- Utført
-									at0016]    -- Ikke relevant
+									at0016,    -- Ikke relevant
+									at0069]    -- Ønsker ikke
 								}
 							}
 						}
@@ -94,7 +96,8 @@ definition
 								defining_code matches {
 									[local::
 									at0018,    -- Utført
-									at0019]    -- Ikke relevant
+									at0019,    -- Ikke relevant
+									at0070]    -- Ønsker ikke
 								}
 							}
 						}
@@ -222,7 +225,8 @@ definition
 								defining_code matches {
 									[local::
 									at0006,    -- Utført
-									at0007]    -- Ikke relevant
+									at0007,    -- Ikke relevant
+									at0071]    -- Påbegynt
 								}
 							}
 						}
@@ -549,6 +553,22 @@ ontology
 					description = <"">
 				>
 				["at0068"] = <
+					text = <"Påbegynt">
+					description = <"">
+				>
+				["at0069"] = <
+					text = <"Ønsker ikke">
+					description = <"">
+				>
+				["at0070"] = <
+					text = <"Ønsker ikke">
+					description = <"">
+				>
+				["at0071"] = <
+					text = <"Påbegynt">
+					description = <"">
+				>
+				["at0072"] = <
 					text = <"Påbegynt">
 					description = <"">
 				>
