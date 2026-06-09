@@ -30,7 +30,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"665d2fa964c6712865d9a262b7dddc5b">
+		["MD5-CAM-1.0.1"] = <"3d7792ccb2bcf5100b0fe188cb1f4f9b">
 		["build_uid"] = <"d92a91ea-33b7-331e-a34d-2d3196e75e9b">
 	>
 
@@ -79,17 +79,6 @@ definition
 							}
 						}
 					}
-					ELEMENT[at0011] occurrences matches {0..1} matches {    -- Medisinsk informasjon
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0012,    -- Utført
-									at0013]    -- Ikke relevant
-								}
-							}
-						}
-					}
 					ELEMENT[at0014] occurrences matches {0..1} matches {    -- Alkohol-E
 						value matches {
 							DV_CODED_TEXT matches {
@@ -134,18 +123,6 @@ definition
 									at0021,    -- Utført
 									at0022,    -- Ikke relevant
 									at0023]    -- Påbegynt
-								}
-							}
-						}
-					}
-					ELEMENT[at0024] occurrences matches {0..1} matches {    -- Sluttnotat, overføringsnotat
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0025,    -- Utført
-									at0026,    -- Ikke relevant
-									at0030]    -- Påbegynt
 								}
 							}
 						}
@@ -341,19 +318,6 @@ ontology
 					text = <"Ikke relevant">
 					description = <"">
 				>
-				["at0011"] = <
-					text = <"Medisinsk informasjon">
-					description = <"">
-					comment = <"Skal ikke brukes">
-				>
-				["at0012"] = <
-					text = <"Utført">
-					description = <"">
-				>
-				["at0013"] = <
-					text = <"Ikke relevant">
-					description = <"">
-				>
 				["at0014"] = <
 					text = <"Alkohol-E">
 					description = <"">
@@ -394,18 +358,6 @@ ontology
 					text = <"Påbegynt">
 					description = <"">
 				>
-				["at0024"] = <
-					text = <"Sluttnotat, overføringsnotat">
-					description = <"">
-				>
-				["at0025"] = <
-					text = <"Utført">
-					description = <"">
-				>
-				["at0026"] = <
-					text = <"Ikke relevant">
-					description = <"">
-				>
 				["at0027"] = <
 					text = <"Kartlegging av risiko (KAR)">
 					description = <"Gjelder Døgnenheten">
@@ -416,10 +368,6 @@ ontology
 				>
 				["at0029"] = <
 					text = <"Ikke relevant">
-					description = <"">
-				>
-				["at0030"] = <
-					text = <"Påbegynt">
 					description = <"">
 				>
 				["at0031"] = <
