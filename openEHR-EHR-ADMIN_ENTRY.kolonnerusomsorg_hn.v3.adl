@@ -30,7 +30,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"4a9e53e950b8eb47a2e9017e9e12ec6f">
+		["MD5-CAM-1.0.1"] = <"665d2fa964c6712865d9a262b7dddc5b">
 		["build_uid"] = <"d92a91ea-33b7-331e-a34d-2d3196e75e9b">
 	>
 
@@ -44,7 +44,7 @@ definition
 							DV_DATE_TIME matches {*}
 						}
 					}
-					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Gjennomgang av bagasje og pasient
+					ELEMENT[at0002] occurrences matches {0..1} matches {    -- Gjennomgang av bagasje
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
@@ -52,6 +52,18 @@ definition
 									at0003,    -- Utført
 									at0004,    -- Ikke relevant
 									at0072]    -- Påbegynt
+								}
+							}
+						}
+					}
+					ELEMENT[at0073] occurrences matches {0..1} matches {    -- Gjennomgang av pasient
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0074,    -- Utført
+									at0075,    -- Ikke relevant
+									at0076]    -- Påbegynt
 								}
 							}
 						}
@@ -180,7 +192,8 @@ definition
 								defining_code matches {
 									[local::
 									at0055,    -- Utført
-									at0056]    -- Ikke relevant
+									at0056,    -- Ikke relevant
+									at0082]    -- Ønsker ikke
 								}
 							}
 						}
@@ -203,7 +216,8 @@ definition
 								defining_code matches {
 									[local::
 									at0036,    -- Utført
-									at0037]    -- Ikke relevant
+									at0037,    -- Ikke relevant
+									at0077]    -- Ønsker ikke
 								}
 							}
 						}
@@ -214,7 +228,8 @@ definition
 								defining_code matches {
 									[local::
 									at0039,    -- Utført
-									at0040]    -- Ikke relevant
+									at0040,    -- Ikke relevant
+									at0078]    -- Ønsker ikke
 								}
 							}
 						}
@@ -237,7 +252,8 @@ definition
 								defining_code matches {
 									[local::
 									at0042,    -- Utført
-									at0043]    -- Ikke relevant
+									at0043,    -- Ikke relevant
+									at0079]    -- Ønsker ikke
 								}
 							}
 						}
@@ -248,7 +264,8 @@ definition
 								defining_code matches {
 									[local::
 									at0053,    -- Utført
-									at0054]    -- Ikke relevant
+									at0054,    -- Ikke relevant
+									at0080]    -- Ønsker ikke
 								}
 							}
 						}
@@ -260,7 +277,8 @@ definition
 									[local::
 									at0046,    -- Utført
 									at0047,    -- Ikke relevant
-									at0048]    -- Påbegynt
+									at0048,    -- Påbegynt
+									at0081]    -- Ønsker ikke
 								}
 							}
 						}
@@ -288,7 +306,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"Gjennomgang av bagasje og pasient">
+					text = <"Gjennomgang av bagasje">
 					description = <"">
 				>
 				["at0003"] = <
@@ -570,6 +588,46 @@ ontology
 				>
 				["at0072"] = <
 					text = <"Påbegynt">
+					description = <"">
+				>
+				["at0073"] = <
+					text = <"Gjennomgang av pasient">
+					description = <"">
+				>
+				["at0074"] = <
+					text = <"Utført">
+					description = <"">
+				>
+				["at0075"] = <
+					text = <"Ikke relevant">
+					description = <"">
+				>
+				["at0076"] = <
+					text = <"Påbegynt">
+					description = <"">
+				>
+				["at0077"] = <
+					text = <"Ønsker ikke">
+					description = <"">
+				>
+				["at0078"] = <
+					text = <"Ønsker ikke">
+					description = <"">
+				>
+				["at0079"] = <
+					text = <"Ønsker ikke">
+					description = <"">
+				>
+				["at0080"] = <
+					text = <"Ønsker ikke">
+					description = <"">
+				>
+				["at0081"] = <
+					text = <"Ønsker ikke">
+					description = <"">
+				>
+				["at0082"] = <
+					text = <"Ønsker ikke">
 					description = <"">
 				>
 			>
